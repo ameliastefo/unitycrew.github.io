@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UnityCrew</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+        .header{
+            width: 100%;
+        }
+        .hero{
+            width: 100%;
+        }
+        .container {
+            width: 100%;
+            margin: 0 auto;
+        }
+        .container1 {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 20px;
+            width: 250px;
+            text-align: center;
+            transition: transform 0.2s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        .card .icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+        .card.create-team .icon {
+            color: #FFD700; /* Gold */
+        }
+        .card.join-team .icon {
+            color: #32CD32; /* LimeGreen */
+        }
+        .card.find-teammates .icon {
+            color: #FF6347; /* Tomato */
+        }
+        .card h2 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+        .card p {
+            font-size: 1em;
+            color: #666;
+        }
+        .footer1, .footer2 {
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+            background-color: #333;
+            color: white;
+        }
+        .footer1 a {
+            color: white;
+            margin: 0 10px;
+        }
+        .social-icons {
+            margin-top: 10px;
+        }
+        .social-icons a {
+            margin: 0 5px;
+        }
+        .social-icons img {
+            width: 30px;
+            height: 30px;
+        }
+        .nav li a, .nav .dropdown {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .a {
+            text-decoration: none;
+        }
+        .nav li a:hover, .nav .dropdown:hover .dropbtn {
+            background-color: #111;
+        }
+
+        .nav .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .nav .dropdown-content li {
+            float: none;
+        }
+
+        .nav .dropdown-content li a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .nav .dropdown-content li a:hover {
+            background-color: #ddd;
+        }
+
+        .nav .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <img src="unitycrew.png" class="logo">
+            <nav class="nav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li class="dropdown">
+                        <a href="#skills" id="skills">Skills</a>
+                        <ul class="dropdown-content">
+                            <li><a href="webdeveloper.html">Web Developer</a></li>
+                            <li><a href="manager.html">Manager</a></li>
+                            <li><a href="swdev.html">Software Developer</a></li>
+                            <li><a href="marketing.html">Marketing Manager</a></li>
+                            <li><a href="db.html">Database Manager</a></li>
+                            <li><a href="backdev.html">Backend Developer</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="account.html" class="login-btn">Profile</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+        <h2 style="text-align: center;">Find Your Ideal Team</h2>
+        <p style="text-align: center;">Connect with like-minded professionals, collaborate on projects, and achieve success together.</p>
+        <img src="https://tse2.mm.bing.net/th?id=OIP.4b3XNO5oZolwZpOBOZG14QHaFQ&pid=Api&P=0&h=220" style="width: 40%; height: auto; margin-left:30%;">
+        <a style="margin-left: 45%;" href="team.html" class="cta-btn">Get Started</a> 
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About UnityCrew </h2>
+            <p>UnityCrew is a platform designed to help tech professionals and entrepreneurs find and create ideal teams for various projects. Whether it's for a hackathon, school project, or startup, UnityCrew  makes it easy to connect with the right people based on your skills and strengths. The idea for this webpage originated from a challenge presented at a JunctionX competition, where participants were tasked with creating a solution to facilitate team formation and collaboration in the tech industry.</p>                
+            </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Features</h2>
+            <div class="container1">
+                <a class="a" href="createteam.html"><div class="card create-team">
+                    <div class="icon">📝</div>
+                    <h2>Create a Team</h2>
+                    <p>Making a team is easy. To start a team, specify your team’s mission. Then invite teammates. Build Teams, Achieve Goals!</p>
+                </div></a>
+                <a class="a" href="team.html"><div class="card join-team">
+                    <div class="icon">👥</div>
+                    <h2>Join a Team</h2>
+                    <p>Are you looking to be part of something bigger? Use UnityCrew to find teams that interest you and apply to join them.</p>
+                </div></a>
+                <a class="a" href="#skills"><div class="card find-teammates">
+                    <div class="icon">🔍</div>
+                    <h2>Find Teammates</h2>
+                    <p>Together, we accomplish more! Find the most relevant teammates with the right skills, interests, and reputation scores.</p>
+                </div></a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or need support, feel free to reach out to us.</p>
+            <a href="mailto:support@teammatch.com" class="cta-btn">Email Us</a>
+        </div>
+    </section>
+    <footer class="footer1">
+        <div>
+            <a href="https://www.aadf.org/contact-careers/">Contact & Careers</a> | <a href="https://www.aadf.org/privacy-policies/">Privacy Policies</a>
+        </div>
+        <div class="social-icons">
+            <span>Connect with us</span>
+            <a href="https://www.facebook.com/" target="_blank"><img src="http://clipart-library.com/images_k/facebook-transparent-icon/facebook-transparent-icon-5.png" alt="Facebook"></a>
+            <a href="https://www.linkedin.com/login" target="_blank"><img src="https://icon-library.com/images/official-linkedin-icon-png/official-linkedin-icon-png-12.jpg" alt="LinkedIn"></a>
+            <a href="https://www.instagram.com/" target="_blank"><img src="http://getdrawings.com/vectors/white-instagram-logo-vector-12.png" alt="Instagram"></a>
+            <a href="https://x.com/" target="_blank"><img src="https://sguru.org/wp-content/uploads/2018/02/twitter-circled.png" alt="Twitter"></a>
+            <a href="https://www.youtube.com/@albanian-americandevelopme6682" target="_blank"><img src="https://webstockreview.net/images/youtube-clipart-white.png" alt="YouTube"></a>
+        </div>
+    </footer>
+    <footer class="footer2">
+        <div class="container">
+            <p>&copy; 2024 UnityCrew. All Rights Reserved.</p>
+        </div>
+        <div>
+            © 2020 Albanian-American Development Foundation
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (localStorage.getItem('user')) {
+                const user = JSON.parse(localStorage.getItem('user'));
+                document.getElementById('user-name').innerText = 'Name: ' + user.name;
+                document.getElementById('user-surname').innerText = 'Surname: ' + user.surname;
+                document.getElementById('user-age').innerText = 'Age: ' + user.age;
+                document.getElementById('user-education').innerText = 'Education: ' + user.education;
+                document.getElementById('user-trainings').innerText = 'Trainings: ' + user.trainings;
+                document.getElementById('user-skills').innerText = 'Skills: ' + user.skills;
+                document.getElementById('user-keyword').innerText = 'Profession/Top Skill: ' + user.keyword;
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teams</title>
+    <style>
+        body {
+            background-color: #333;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h2.page-title {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            color: #ff6f61;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+            max-width: 1200px;
+        }
+        .team {
+            background-color: #d2d2d2;
+            border-radius: 10px;
+            margin: 10px;
+            padding: 20px;
+            width: 30%;
+            box-sizing: border-box;
+            text-align: center;
+            color: #0f0f0f;
+        }
+        .team h2 {
+            margin-top: 0;
+            color: #ff6f61;
+        }
+        .apply-btn, .edit-btn {
+            background-color: #ff6f61;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        .apply-btn:hover, .edit-btn:hover {
+            background-color: #e65d55;
+        }
+    </style>
+    <script>
+        function showForm(teamName) {
+            document.getElementById('form-header').innerText = 'Applying for ' + teamName;
+            document.getElementById('application-form').style.display = 'flex';
+            window.scrollTo(0, document.body.scrollHeight);
+        }
+
+        function editTeam(button) {
+            const teamDiv = button.parentNode;
+            const name = prompt("Edit Team Name:", teamDiv.querySelector('h2').innerText);
+            const description = prompt("Edit Team Description:", teamDiv.querySelector('p:nth-of-type(1)').innerText.replace('Description: ', ''));
+            const skills = prompt("Edit Skills Needed:", teamDiv.querySelector('p:nth-of-type(2)').innerText.replace('Skills Needed: ', ''));
+            
+            teamDiv.querySelector('h2').innerText = name;
+            teamDiv.querySelector('p:nth-of-type(1)').innerText = 'Description: ' + description;
+            teamDiv.querySelector('p:nth-of-type(2)').innerText = 'Skills Needed: ' + skills;
+        }
+    </script>
+</head>
+<body>
+    <h2 class="page-title">Join Teams</h2>
+    <div class="container" id="team-container">
+        <div class="team">
+            <h2>Team Alpha</h2>
+            <p><strong>Members:</strong> John Doe, Jane Smith, Emily Johnson</p>
+            <p><strong>Skills Needed:</strong> Web Developer, Marketing Manager</p>
+            <button class="apply-btn" onclick="showForm('Team Alpha')">Apply</button>
+        </div>
+        <div class="team">
+            <h2>Team TechTitans</h2>
+            <p><strong>Members:</strong> Michael Brown, Sarah Davis, Chris Wilson</p>
+            <p><strong>Skills Needed:</strong> Software Developer, Database Manager</p>
+            <button class="apply-btn" onclick="showForm('Team TechTitans')">Apply</button>
+        </div>
+        <div class="team">
+            <h2>Team SolarSquad</h2>
+            <p><strong>Members:</strong> Laura Garcia, David Martinez, Linda Rodriguez</p>
+            <p><strong>Skills Needed:</strong> Backend Developer, Manager</p>
+            <button class="apply-btn" onclick="showForm('Team Solar Squad')">Apply</button>
+        </div>
+        <div class="team">
+            <h2>Team Achievers</h2>
+            <p><strong>Members:</strong> James Taylor, Patricia Anderson, Robert Thomas</p>
+            <p><strong>Skills Needed:</strong> Web Developer, Software Developer</p>
+            <button class="apply-btn" onclick="showForm('Team Achievers')">Apply</button>
+        </div>
+        <div class="team">
+            <h2>Team Deal Makers</h2>
+            <p><strong>Members:</strong> Charles Jackson, Mary White, Barbara Harris</p>
+            <p><strong>Skills Needed:</strong> Marketing Manager, Database Manager</p>
+            <button class="apply-btn" onclick="showForm('Team Deal Makers')">Apply</button>
+        </div>
+        <div class="team">
+            <h2>Team Challengers</h2>
+            <p><strong>Members:</strong> Paul Clark, Sandra Lewis, Mark Lee</p>
+            <p><strong>Skills Needed:</strong> Backend Developer, Manager</p>
+            <button class="apply-btn" onclick="showForm('Team Challengers')">Apply</button>
+        </div>
+    </div>
+
+    <div id="application-form" class="form-container" style="display: none;">
+        <h2 id="form-header">Applying for Team</h2>
+        <input type="text" placeholder="First Name" required>
+        <input type="text" placeholder="Last Name" required>
+        <input type="number" placeholder="Age" required>
+        <textarea placeholder="Motivation Letter" required></textarea>
+        <button type="submit">Submit</button>
+    </div>
+
+    <a href="createteam.html" style="color: #d2d2d2;">Create a New Team</a>
+</body>
+</html>
+

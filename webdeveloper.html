@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Developers</title>
+    <style>
+        body {
+            background-color: #333;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+        h2 {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            color: #ff6f61;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+            max-width: 1200px;
+            box-sizing: border-box;
+        }
+        .person {
+            background-color: #d2d2d2;
+            border-radius: 10px;
+            margin: 10px;
+            padding: 20px;
+            width: 30%;
+            box-sizing: border-box;
+            text-align: center;
+            color: #0f0f0f;
+        }
+        .person h3 {
+            margin-top: 0;
+            color: #ff6f61;
+        }
+        .contact-options {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            text-align: center;
+        }
+        .contact-options a {
+            display: block;
+            margin-bottom: 5px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Web Developers</h2>
+    <div class="container">
+        <div class="person">
+            <h3>John Doe</h3>
+            <p>Age: 30</p>
+            <p>Education: Bachelor's in Computer Science</p>
+            <button onclick="toggleContactOptions('john')">Contact</button>
+            <div id="john-contact" class="contact-options">
+                <a href="mailto:john@example.com">Email</a>
+                <a href="https://www.linkedin.com/feed/">LinkedIn</a>
+                <a href="https://web.whatsapp.com/">Phone Number</a>
+            </div>
+        </div>
+        <div class="person">
+            <h3>Jane Smith</h3>
+            <p>Age: 28</p>
+            <p>Education: Master's in Web Development</p>
+            <button onclick="toggleContactOptions('jane')">Contact</button>
+            <div id="jane-contact" class="contact-options">
+                <a href="mailto:jane@example.com">Email</a>
+                <a href="https://www.linkedin.com/feed/">LinkedIn</a>
+                <a href="https://web.whatsapp.com/">Phone Number</a>
+            </div>
+        </div>
+        <div class="person">
+            <h3>Flavia Harris</h3>
+            <p>Age: 38</p>
+            <p>Education: Bachelor's in Computer Science</p>
+            <button onclick="toggleContactOptions('flavia')">Contact</button>
+            <div id="flavia-contact" class="contact-options">
+                <a href="mailto:flavia@example.com">Email</a>
+                <a href="https://www.linkedin.com/feed/">LinkedIn</a>
+                <a href="https://web.whatsapp.com/">Phone Number</a>
+            </div>
+        </div>
+        <div class="person">
+            <h3>Alessio David</h3>
+            <p>Age: 24</p>
+            <p>Education: Bachelor's in Web Development</p>
+            <button onclick="toggleContactOptions('alessio')">Contact</button>
+            <div id="alessio" class="contact-options">
+                <a href="mailto:alession@example.com">Email</a>
+                <a href="https://www.linkedin.com/feed/">LinkedIn</a>
+                <a href="https://web.whatsapp.com/">Phone Number</a>
+            </div>
+        </div>
+        <div class="person">
+            <h3>Mary Smith</h3>
+            <p>Age: 26</p>
+            <p>Education: Master's in Computer Science</p>
+            <button onclick="toggleContactOptions('mary')">Contact</button>
+            <div id="mary" class="contact-options">
+                <a href="mailto:mary@example.com">Email</a>
+                <a href="https://www.linkedin.com/feed/">LinkedIn</a>
+                <a href="https://web.whatsapp.com/">Phone Number</a>
+            </div>
+        </div>
+        <div class="person">
+            <h3>Sara James</h3>
+            <p>Age: 20</p>
+            <p>Education: Master's in Web Development</p>
+            <button onclick="toggleContactOptions('sara')">Contact</button>
+            <div id="sara" class="contact-options">
+                <a href="mailto:sara@example.com">Email</a>
+                <a href="https://www.linkedin.com/feed/">LinkedIn</a>
+                <a href="https://web.whatsapp.com/">Phone Number</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        function toggleContactOptions(personName) {
+            const contactOptions = document.getElementById(`${personName}-contact`);
+            contactOptions.style.display = contactOptions.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>

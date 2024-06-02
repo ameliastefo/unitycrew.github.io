@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            margin-top: 5%;
+        }
+        .login-container h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .login-container input[type="text"],
+        .login-container input[type="number"],
+        .login-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .login-container button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="surname">Surname</label>
+            <input type="text" id="surname" name="surname" required>
+            
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" required>
+            
+            <label for="education">Education</label>
+            <input type="text" id="education" name="education" required>
+            
+            <label for="trainings">Trainings</label>
+            <textarea id="trainings" name="trainings" rows="3" required></textarea>
+            
+            <label for="skills">Skills</label>
+            <textarea id="skills" name="skills" rows="3" required></textarea>
+            
+            <label for="keyword">Profession/Top Skill</label>
+            <input type="text" id="keyword" name="keyword" required>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const user = {
+                name: document.getElementById('name').value,
+                surname: document.getElementById('surname').value,
+                age: document.getElementById('age').value,
+                education: document.getElementById('education').value,
+                trainings: document.getElementById('trainings').value,
+                skills: document.getElementById('skills').value,
+                keyword: document.getElementById('keyword').value,
+            };
+            localStorage.setItem('user', JSON.stringify(user));
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>
+

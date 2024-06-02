@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Team</title>
+    <style>
+        body {
+            background-color: #333;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .form-container {
+            background-color: #d2d2d2;
+            border-radius: 10px;
+            margin: 10px;
+            padding: 20px;
+            width: 50%;
+            box-sizing: border-box;
+            text-align: center;
+            color: #0f0f0f;
+        }
+        .form-container h2 {
+            margin-top: 0;
+            color: #ff6f61;
+        }
+        .form-container input, .form-container textarea {
+            width: 80%;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #fff;
+        }
+        .form-container textarea {
+            resize: none;
+            height: 100px;
+        }
+        .form-container button {
+            background-color: #ff6f61;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        .form-container button:hover {
+            background-color: #e65d55;
+        }
+    </style>
+    <script>
+        function createTeam() {
+            const name = document.getElementById('team-name').value;
+            const description = document.getElementById('team-description').value;
+            const skills = document.getElementById('team-skills').value;
+
+            if (name && description && skills) {
+                const team = {
+                    name: name,
+                    description: description,
+                    skills: skills
+                };
+
+                localStorage.setItem('newTeam', JSON.stringify(team));
+                window.location.href = 'team.html';
+            } else {
+                alert('Please fill out all fields.');
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Create a New Team</h2>
+        <input type="text" id="team-name" placeholder="Team Name" required>
+        <textarea id="team-description" placeholder="Team Description" required></textarea>
+        <input type="text" id="team-skills" placeholder="Skills Needed (comma-separated)" required>
+        <button onclick="createTeam()">Create</button>
+    </div>
+</body>
+</html>
